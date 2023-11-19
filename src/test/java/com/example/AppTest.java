@@ -1,20 +1,17 @@
 package com.example;
 
-import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-{
-    /**
-     * Rigorous Test :-)
-     */
+public class AppTest {
+
     @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
+    public void testDecodeVowels() {
+        assertEquals("answer", App.decodeVowels("1nsw2r"));
+    }
+
+    @Test
+    public void testDecodeConsonants() {
+        assertEquals("jcgevzu", App.decodeConsonants("hbfetyu"));
     }
 }
