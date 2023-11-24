@@ -1,17 +1,24 @@
 package com.example;
 
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class AppTest {
+    private App app;
+
+    @Before
+    public void setUp() {
+        app = new App();
+    }
 
     @Test
     public void testDecodeVowels() {
-        assertEquals("answer", App.decodeVowels("1nsw2r"));
+        assertEquals("answer", app.decodeVowels("1nsw2r"));
     }
 
     @Test
     public void testDecodeConsonants() {
-        assertEquals("jcgevzu", App.decodeConsonants("hbfetyu"));
+        assertEquals("jcgevzu", app.decodeConsonants("hbfetyu"));
     }
 }

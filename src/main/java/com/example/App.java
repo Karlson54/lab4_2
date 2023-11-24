@@ -1,7 +1,7 @@
 package com.example;
 
 public class App {
-    public static String decodeVowels(String input) {
+    public String decodeVowels(String input) {
         return input.replaceAll("1", "a")
                     .replaceAll("2", "e")
                     .replaceAll("3", "i")
@@ -9,7 +9,7 @@ public class App {
                     .replaceAll("5", "u");
     }
 
-    public static String decodeConsonants(String input) {
+    public String decodeConsonants(String input) {
         char[] chars = input.toCharArray();
         for (int i = 0; i < chars.length; i++) {
             char currentChar = chars[i];
@@ -20,11 +20,11 @@ public class App {
         return new String(chars);
     }
 
-    private static boolean isConsonant(char c) {
+    private boolean isConsonant(char c) {
         return "bcdfghjklmnpqrstvwxyz".indexOf(c) != -1;
     }
 
-    private static char getNextConsonant(char c) {
+    private char getNextConsonant(char c) {
         String consonants = "bcdfghjklmnpqrstvwxyz";
         int index = consonants.indexOf(c);
         int nextIndex = (index + 1) % consonants.length();
@@ -32,13 +32,15 @@ public class App {
     }
 
     public static void main(String[] args) {
+        App app = new App();
+
         String encodedMessage1 = "t2st3ng";
-        String decodedMessage1 = decodeVowels(encodedMessage1);
+        String decodedMessage1 = app.decodeVowels(encodedMessage1);
         System.out.println("Encoded: " + encodedMessage1);
         System.out.println("Decoded: " + decodedMessage1);
 
         String encodedMessage2 = "ufttjoh";
-        String decodedMessage2 = decodeConsonants(encodedMessage2);
+        String decodedMessage2 = app.decodeConsonants(encodedMessage2);
         System.out.println("Encoded: " + encodedMessage2);
         System.out.println("Decoded: " + decodedMessage2);
     }
