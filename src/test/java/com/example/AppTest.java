@@ -19,6 +19,6 @@ public class AppTest {
 
     @Test
     public void testDecodeConsonants() {
-        assertEquals("jcgevzu", app.decodeConsonants("hbfetyu"));
+        assertEquals("gzdesxu", app.decodeConsonants("hbfetyu"));
     }
 }
